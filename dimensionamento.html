@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dimensionamento de Cabos - Eletricidade Residencial</title>
     <style>
-        /* Mesma estilização das páginas anteriores */
         body { font-family: Arial, sans-serif; margin: 40px; background-color: #f7f9fc; color: #333; }
         header { border-bottom: 2px solid #007acc; padding-bottom: 10px; margin-bottom: 30px; }
-        h1, h2 { color: #007acc; }
+        h1, h2, h3 { color: #007acc; }
         nav a { margin-right: 15px; text-decoration: none; color: #007acc; font-weight: bold; }
         nav a:hover { text-decoration: underline; }
+        .passo { background: #e8f4fd; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 5px solid #007acc; }
+        .tabela-dimensionamento { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .tabela-dimensionamento th { background: #007acc; color: white; padding: 12px; }
+        .tabela-dimensionamento td { padding: 10px; border: 1px solid #ddd; }
+        .tabela-dimensionamento tr:nth-child(even) { background: #f8f9fa; }
+        .formula { background: #fff3cd; padding: 15px; border-radius: 5px; margin: 15px 0; font-family: monospace; }
+        .aviso { background: #f8d7da; border: 1px solid #f5c6cb; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .exemplo { background: #d4edda; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 5px solid #28a745; }
     </style>
 </head>
 <body>
@@ -26,18 +33,98 @@
             <a href="referencias.html">Referências</a>
         </nav>
     </header>
+    
     <main>
         <section>
-            <h2>Dimensionamento de Cabos</h2>
-            <p>O dimensionamento correto dos cabos é fundamental para a segurança e eficiência das instalações elétricas residenciais.</p>
-            <h3>Importância</h3>
-            <p>Cabos subdimensionados podem superaquecer e causar incêndios, enquanto cabos sobredimensionados aumentam custos desnecessários.</p>
-            <h3>Tipos de cabos</h3>
-            <p>Existem cabos de cobre e alumínio, com isolação diferente, apropriados para distintas cargas e condições.</p>
-            <h3>Cálculo da corrente máxima</h3>
-            <p>A corrente máxima suportada depende da seção transversal do cabo, da temperatura ambiente e do tipo de conduíte utilizado.</p>
-            <h3>Normas Técnicas</h3>
-            <p>O dimensionamento deve seguir a norma NBR 5410, que estabelece critérios para instalações residenciais.</p>
+            <h2>🎯 Dimensionamento de Cabos - AULA COMPLETA</h2>
+            
+            <div class="aviso">
+                <strong>⚠️ ATENÇÃO:</strong> O dimensionamento INCORRETO pode causar incêndios! Siga a NBR 5410.
+            </div>
+
+            <div class="passo">
+                <h3>📋 PASSO 1: Identifique a Carga do Circuito</h3>
+                <p>Some a potência de TODOS os aparelhos do circuito:</p>
+                <ul>
+                    <li>Iluminação: 100W por ponto</li>
+                    <li>Tomadas: 600W por ponto (TUG) ou potência real</li>
+                    <li>Chuveiro: Potência na etiqueta</li>
+                    <li>Ar-condicionado: Potência na etiqueta</li>
+                </ul>
+            </div>
+
+            <div class="passo">
+                <h3>⚡ PASSO 2: Calcule a Corrente (I)</h3>
+                <div class="formula">
+                    <strong>Fórmula:</strong>I = P / V<br>
+                    <small>P = Potência total (W) | V = Tensão (127V ou 220V) |  I = Corrente (A)</small>
+                </div>
+                <div class="exemplo">
+                    <strong>Exemplo:</strong> Chuveiro 5500W em 220V<br>
+                    I = P / V<br>
+					I = 5500 / 220<br>
+					I = 25A
+					
+                </div>
+            </div>
+
+            <div class="passo">
+                <h3>📊 PASSO 3: Consulte Tabela NBR 5410 (Tabela Referente a Condutores isolados ou cabos unipolares em eletroduto de seção circular embutido em alvenaria - Metodo B1 Com 2 Condutores Carregados)</h3>
+                <table class="tabela-dimensionamento">
+                    <thead>
+                        <tr>
+                            <th>Carga Máxima (A)</th>
+                            <th>Cabo Cobre (mm²)</th>
+                            <th>Disjuntor</th>
+                            <th>Uso Típico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>≤ 17,5A</td><td>1,5</td><td>10-16A</td><td>Iluminação</td></tr>
+                        <tr><td>≤ 24A</td><td>2,5</td><td>16-20A</td><td>Tomadas TUG</td></tr>
+                        <tr><td>≤ 32A</td><td>4,0</td><td>32A</td><td>Chuveiro 5500W</td></tr>
+                        <tr><td>≤ 41A</td><td>6,0</td><td>40A</td><td>Chuveiro 7500W</td></tr>
+                        <tr><td>≤ 57A</td><td>10</td><td>50A</td><td>Forno elétrico</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="passo">
+                <h3>🔧 PASSO 4: Fatores de Correção</h3>
+                <ul>
+                    <li><strong>Temperatura ambiente > 30°C:</strong> Reduza capacidade em 10%</li>
+                    <li><strong>3 ou mais cabos juntos:</strong> Reduza 20-50%</li>
+                    <li><strong>Cabo em eletroduto embutido:</strong> Reduza 15%</li>
+                    <li><strong>Queda de tensão:</strong> Verifique na calculadora da próxima página</li>
+                </ul>
+            </div>
+
+            <div class="passo">
+                <h3>✅ PASSO 5: Escolha Disjuntor</h3>
+                <p>O disjuntor deve ser 1,25x a corrente calculada para cargas de uso contínuo (funcionamento por ≥ 3 horas) (NBR 5410):</p>
+                <div class="exemplo">
+                    Corrente calculada = 25A → Disjuntor **32A** (próximo maior)
+                </div>
+            </div>
+
+            <h3>🎓 Exemplo Prático Completo: Ar condicionado industrial 4000W</h3>
+            <div class="exemplo">
+                <ol>
+                    <li><strong>Potência:</strong> 4000W</li>
+                    <li><strong>Corrente:</strong> I = 4400 / 220 = 20</li>
+                    <li><strong>Cabo:</strong> 4mm² (suporta 32A)</li>
+                    <li><strong>Disjuntor:</strong> 25A (1,25 × 20A = 25A → Ou próximo valor comercial)</li>
+                    <li><strong>Verificar queda de tensão</strong> para comprimento do cabo</li>
+                </ol>
+            </div>
+
+            <div class="aviso">
+                <strong>💡 DICAS FINAIS:</strong><br>
+                • Sempre use cabo flexível antirretardante<br>
+                • Instale DR (Diferencial Residual) 30mA<br>
+                • Contrate eletricista registrado no CREA<br>
+                • Teste instalação após execução
+            </div>
         </section>
     </main>
 </body>
