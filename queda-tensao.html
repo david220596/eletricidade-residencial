@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queda de Tensão - Eletricidade Residencial</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f7f9fc; color: #333; }
+        header { border-bottom: 2px solid #007acc; padding-bottom: 10px; margin-bottom: 30px; }
+        h1, h2, h3 { color: #007acc; }
+        nav a { margin-right: 15px; text-decoration: none; color: #007acc; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        .formula { background-color: #e8f4fd; padding: 15px; border-left: 4px solid #007acc; margin: 15px 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Eletricidade Residencial - Guia Prático</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="conceitos.html">Conceitos Básicos</a>
+            <a href="dimensionamento.html">Dimensionamento de Cabos</a>
+            <a href="queda-tensao.html">Queda de Tensão</a>
+            <a href="seguranca.html">Segurança Elétrica</a>
+            <a href="instalacoes.html">Instalações Residenciais</a>
+            <a href="referencias.html">Referências</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Queda de Tensão</h2>
+            <p>A queda de tensão ocorre quando há perda de voltagem ao longo de um cabo devido à sua resistência.</p>
+            
+            <h3>Por que é importante?</h3>
+            <p>Quedas excessivas reduzem a eficiência dos equipamentos e podem causar mau funcionamento de lâmpadas e motores.</p>
+            
+            <h3>Fórmula básica</h3>
+            <div class="formula">
+				<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+					<div class="wp-block-image">
+						<figure class="aligncenter size-full is-resized">
+							<img loading="lazy" decoding="async" src="https://telredes.com.br/wp-content/uploads/2022/08/formula-da-queda-de-tensao-circuito-monofasico.png" alt="" class="wp-image-1710" width="331" height="78" srcset="https://telredes.com.br/wp-content/uploads/2022/08/formula-da-queda-de-tensao-circuito-monofasico.png 463w, https://telredes.com.br/wp-content/uploads/2022/08/formula-da-queda-de-tensao-circuito-monofasico-300x71.png 300w" sizes="(max-width: 331px) 100vw, 331px">
+						</figure>
+					</div>
+				</div>
+                <p>Onde:</p>
+                <ul>
+                    <li>ΔV = Queda de tensão</li>
+                    <li>ρ = Resistividade do material (tabelado)</li>
+                    <li>L = Tamanho do condutor (em metros)</li>
+                    <li>I = Corrente elétrica do circuito (em ampere)</li>
+					<li>cos φ = Fator de potência</li>
+                    <li>S = Seção transversal do condutor (em mm²)</li>
+					<li>V = Tensão elétrica de alimentação (em volt)</li>
+                </ul>
+            </div>
+            
+            <h3>Calculadora Interativa</h3>
+            <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Queda de Tensão - Eletricidade Residencial</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            background-color: #f7f9fc; 
+            color: #333; 
+        }
+        .calculadora {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,122,204,0.15);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h2 { color: #007acc; margin-bottom: 25px; }
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        label {
+            font-weight: bold;
+            min-width: 140px;
+            color: #007acc;
+        }
+        input, select {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 120px;
+        }
+        input:focus, select:focus {
+            border-color: #007acc;
+            outline: none;
+        }
+        button {
+            background: #007acc;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 10px 0 140px;
+        }
+        button:hover { background: #005a99; }
+        .resultado {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            border-left: 5px solid #007acc;
+        }
+        .aceitavel { border-left-color: #28a745; background: #d4edda; }
+        .inaceitavel { border-left-color: #dc3545; background: #f8d7da; }
+        .status-ok { color: #28a745; font-weight: bold; }
+        .status-ruim { color: #dc3545; font-weight: bold; }
+        .formula {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <h2>🧮 Calculadora de Queda de Tensão</h2>
+        
+        <div class="input-group">
+            <label>Tensão da Rede:</label>
+            <select id="tensao">
+                <option value="127">127V</option>
+                <option value="220" selected>220V</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Comprimento do Cabo (m):</label>
+            <input type="number" id="comprimento" value="50" min="1" max="500" step="1">
+        </div>
+
+        <div class="input-group">
+            <label>Corrente (A):</label>
+            <input type="number" id="corrente" value="10" min="1" max="100" step="0.1">
+        </div>
+
+        <div class="input-group">
+            <label>Seção do Cabo (mm²):</label>
+            <select id="secao">
+                <option value="1.5">1,5</option>
+                <option value="2.5" selected>2,5</option>
+                <option value="4">4,0</option>
+                <option value="6">6,0</option>
+                <option value="10">10</option>
+                <option value="16">16</option>
+                <option value="25">25</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Material:</label>
+            <select id="material">
+                <option value="cobre" selected>Cobre</option>
+                <option value="aluminio">Alumínio</option>
+            </select>
+        </div>
+
+        <button onclick="calcular()">Calcular Queda de Tensão</button>
+        
+        <div id="resultado" class="resultado" style="display: none;"></div>
+    </div>
+
+    <script>
+        function calcular() {
+            // Captura valores
+            const tensao = parseFloat(document.getElementById('tensao').value);
+            const comprimento = parseFloat(document.getElementById('comprimento').value);
+            const corrente = parseFloat(document.getElementById('corrente').value);
+            const secao = parseFloat(document.getElementById('secao').value);
+            const material = document.getElementById('material').value;
+            
+            // Resistividade
+            const resistividade = material === 'cobre' ? 0.017 : 0.028;
+            
+            // Cálculo da queda de tensão
+            const quedaTensao = 2 * (resistividade * comprimento * corrente) / secao;
+            const percentual = (quedaTensao / tensao) * 100;
+            
+            // Critério NBR 5410: máx 4% para iluminação, 5% para força
+            const limiteAceitavel = 5; // %
+            const status = percentual <= limiteAceitavel ? 'aceitavel' : 'inaceitavel';
+            const statusTexto = percentual <= limiteAceitavel ? '✅ ACEITÁVEL' : '❌ INACEITÁVEL';
+            
+            // Exibe resultado
+            const resultado = document.getElementById('resultado');
+            resultado.innerHTML = `
+                <h3>Resultados:</h3>
+                <p><strong>Queda de Tensão:</strong> ${quedaTensao.toFixed(2)} V</p>
+                <p><strong>Percentual:</strong> ${percentual.toFixed(2)}% (${statusTexto})</p>
+                <p><strong>Limite NBR 5410:</strong> ${limiteAceitavel}%</p>
+                ${percentual > limiteAceitavel ? 
+                    `<p style="color: #dc3545; font-weight: bold;">
+                        💡 <strong>Recomendação:</strong> Aumente a seção do cabo ou reduza o comprimento!
+                    </p>` : ''
+                }
+            `;
+            
+            resultado.className = `resultado ${status}`;
+            resultado.style.display = 'block';
+            
+            // Scroll para resultado
+            resultado.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Calcula automaticamente ao pressionar Enter
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') calcular();
+        });
+    </script>
+</body>
+</html>
+
+        </section>
+    </main>
+</body>
+</html>
