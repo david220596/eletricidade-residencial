@@ -198,7 +198,7 @@
             const percentual = (quedaTensao / tensao) * 100;
             
             // Critério NBR 5410: máx 4% para iluminação, 5% para força
-            const limiteAceitavel = 5; // %
+            const limiteAceitavel = 4; // %
             const status = percentual <= limiteAceitavel ? 'aceitavel' : 'inaceitavel';
             const statusTexto = percentual <= limiteAceitavel ? '✅ ACEITÁVEL' : '❌ INACEITÁVEL';
             
@@ -235,3 +235,4 @@
     </main>
 </body>
 </html>
+
